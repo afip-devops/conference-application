@@ -7,7 +7,7 @@ target2 ansible_host=172.17.0.5 ansible_user=centos  ansible_password=Passw0rd a
 [ubuntu]
 ubuntu01 ansible_host=172.17.0.4  ansible_user=ubuntu  ansible_password=Passw0rd ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
 [centosvm]
-centos_remote_a ansible_host=51.68.28.250  ansible_ssh_user=centos ansible_ssh_private_key=/home/ubuntu/.ssh/id_rsa
+centos_remote_a ansible_host=51.255.211.136  ansible_ssh_user=centos ansible_ssh_private_key=/home/ubuntu/.ssh/id_rsa
 [centos:children]
 centosvm
 centosdocker
