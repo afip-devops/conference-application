@@ -29,8 +29,8 @@ pipeline {
             }
             stage('Conf-App Docker Build Image') {
                 steps {
-                    sh "rm -Rf conference-app.war && \
-                    wget http://172.81.183.213:18081/repository/maven-releases/de/codecentric/conference-app/3.0.0/conference-app-3.0.0.war -O ${WORKSPACE}/conference-app.war && \
+                    sh "rm -Rf conference-app-3.0.0.war && \
+                    wget http://172.81.183.213:18081/repository/maven-releases/de/codecentric/conference-app/3.0.0/conference-app-3.0.0.war -O ${WORKSPACE}/conference-app-3.0.0.war && \
                     docker build -t conference-app:latest ."
                 }
             }
