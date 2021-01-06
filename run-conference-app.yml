@@ -9,4 +9,4 @@
       shell: docker rm -f conference-test
       when: conference_id.stdout != ""
     - name: Start test container
-      shell: docker run -d --name conference-test -p 10100:8080 systemdevformations/conference-app
+      shell: docker run -d --name conference-test -p 10100:8080 aptlt/conference-app-3.0.0
