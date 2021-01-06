@@ -10,6 +10,7 @@ pipeline {
         stages {
             stage('Conf-App Build Maven') {
                 steps {
+                    deleteDir()
                     git url: 'https://github.com/aptlt/conference-application.git'
                     sh "mvn clean install package"
                     archiveArtifacts artifacts: '**/*.war', followSymlinks: false
