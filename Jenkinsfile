@@ -8,9 +8,13 @@ pipeline {
         parallelsAlwaysFailFast()
     }
         stages {
+            stage('CleanWorkspace') {
+                steps {
+                    cleanWs()
+                }
+            }
             stage('Conf-App Build Maven') {
                 steps {
-                    deleteDir()
                     git url: 'https://github.com/aptlt/conference-application.git'
                     sh "mvn clean install package"
                     archiveArtifacts artifacts: '**/*.war', followSymlinks: false
