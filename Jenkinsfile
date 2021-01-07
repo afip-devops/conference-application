@@ -6,6 +6,7 @@ pipeline {
     }
     options {
         parallelsAlwaysFailFast()
+        ansiColor('xterm')
     }
         stages {
             stage('CleanWorkspace') {

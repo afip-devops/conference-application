@@ -8,5 +8,9 @@
     - name: Delete container if exist
       shell: docker rm -f conference-test
       when: conference_id.stdout != ""
+    - name: Delete images if exist
+      docker_image:
+        name: aptlt/conference-app-3.0.0
+        state: absent
     - name: Start test container
       shell: docker run -d --name conference-test -p 10100:8080 aptlt/conference-app-3.0.0
